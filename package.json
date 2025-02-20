@@ -1,0 +1,27 @@
+{
+  "name": "Atcoder-Notify",
+  "version": "1.0",
+  "description": "For AtCoder",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "node main.mjs"
+  },
+  "dependencies": {
+    "@gonetone/get-youtube-id-by-url": "^1.0.1",
+    "discord.js": "^14.14.1",
+    "express": "^4.19.2",
+    "fetch": "^1.1.0",
+    "jsdom": "^26.0.0",
+    "node-fetch": "^3.3.2",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "keywords": [
+    "node",
+    "glitch"
+  ]
+}
