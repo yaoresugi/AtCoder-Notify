@@ -52,25 +52,16 @@ if (process.env.RUN_APP === "true") {
   const handlers = new Map();
   const handlersPath = path.join(process.cwd(), "handlers");
   const handlerFiles = fs.readdirSync(handlersPath).filter((file) => file.endsWith(".mjs"));
-
+  
   for (const file of handlerFiles) {
     const filePath = path.join(handlersPath, file);
     import(filePath).then((module) => {
-      handlers.set(file.slice(0, -4), module);
+      handlers.set(file.slice(0, -4), module.default);
     });
   }
-
+  
   client.on("interactionCreate", async (interaction) => {
-    await handlers.get("interactionCreate").default(interaction);
-  });
-
-  client.on("voiceStateUpdate", async (oldState, newState) => {
-    await handlers.get("voiceStateUpdate").default(oldState, newState);
-  });
-
-  client.on("messageCreate", async (message) => {
-    if (message.author.id === client.user.id || message.author.bot) return;
-    await handlers.get("messageCreate").default(message);
+    await handlers.get("interactionCreate")?.default(interaction);
   });
 
   client.on("ready", async () => {
