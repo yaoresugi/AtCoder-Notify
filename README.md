@@ -1,7 +1,7 @@
 #AtCoder-Notify
 
 ## 概要
-AtCoder/(https://atcoder.jp//)上のレートが反映された際にメッセージを送信するDiscord botです。結果をいち早く見たいけれども更新されるタイミングがバラバラでいつ確認すればいいのかが分からなくて作りました。
+AtCoder\(https://atcoder.jp/\)上のレートが反映された際にメッセージを送信するDiscord botです。結果をいち早く見たいけれども更新されるタイミングがバラバラでいつ確認すればいいのかが分からなくて作りました。
 
 ## 導入
 https://discord.com/oauth2/authorize?client_id=1337305665491697725
