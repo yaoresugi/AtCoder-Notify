@@ -61,7 +61,12 @@ if (process.env.RUN_APP === "true") {
   }
   
   client.on("interactionCreate", async (interaction) => {
-    await handlers.get("interactionCreate")?.default(interaction);
+    const handler = handlers.get("interactionCreate");
+    if (handler && typeof handler === "function") {
+      await handler(interaction);
+    } else {
+      console.warn(`Handler for interactionCreate is not a function`);
+    }
   });
 
   client.on("ready", async () => {
